@@ -1,0 +1,15 @@
+<div class="add-note">
+    <span>
+        <input matInput type="text" #noteToAdd>
+        <button mat-button color ="primary" (click)="addNote(noteToAdd.value)">Add Item</button>
+    </span>
+</div>
+
+<div class="display-notes" *ngFor="let note of notes; let i = index">
+    <mat-card>
+        <span>{{note}}</span>
+        <span>
+            <button mat-button color="warn" (click)="removeNote(i)">Delete</button>
+        </span>
+    </mat-card>
+</div>
